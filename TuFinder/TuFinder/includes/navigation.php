@@ -1,3 +1,5 @@
+
+
 <div class="container">
       <nav class="navbar navbar-expand-lg navbar-light p-0">
         <a class="navbar-brand" href="index.php"> <h2 class="section-title text-white">TuFinder</h2></a>
@@ -22,6 +24,19 @@
             <li class="nav-item @@contact">
               <a class="nav-link" href="contact.php">CONTACT</a>
             </li>
+            
+            <!-- display when the user log in -->
+            <?php
+            if(isset($_SESSION["email"])){
+              ?>
+               <li class="nav-item @@profile">
+              <a class="nav-link" href="teacher-single.php?k=<?php echo $userEmail; ?>">PROFILE</a>
+            </li>
+            <?php
+            }
+
+            ?>
+           
           </ul>
         </div>
       </nav>

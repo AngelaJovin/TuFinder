@@ -1,3 +1,11 @@
+<?php
+// session_start();
+
+require_once("includes/db.php");
+require_once("includes/functions.php")
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,15 +33,13 @@
 
   <!-- Main Stylesheet -->
   <link href="css/style.css" rel="stylesheet">
+  <link href="css/styles2.css" rel="stylesheet">
   
   <!--Favicon-->
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
-<?php
-session_start();
 
-?>
 
 </head>
 
@@ -86,6 +92,7 @@ require_once("includes/loginSignUP.php");
 </section>
 <!-- /page title -->
 
+
 <!-- teachers -->
 <section class="section">
   <div data-ref="mixitup-target" class="container">
@@ -104,27 +111,90 @@ require_once("includes/loginSignUP.php");
       </div>
     </div>
     <!-- teacher list -->
-    <div class="row" data-ref="mixitup-container">
+    <div class="row tichersList" data-ref="mixitup-container">
       <!-- teacher -->
-      <div data-ref="mixitup-target" class="col-lg-4 col-sm-6 mb-5 arts math">
+
+
+      <!-- loading teachers from database  -->
+
+
+<?php
+$_SESSION["rowToStart"]=0;
+
+if(!isset($_SESSION["email"])){
+  $sql = "SELECT * FROM registration WHERE status='Tutor' LIMIT 6 OFFSET 0";
+}else{
+  $userEmail=$_SESSION["email"];
+  $sql = "SELECT * FROM registration WHERE status='Tutor' AND email !='$userEmail' LIMIT 6 OFFSET 0";
+}
+
+$result = mysqli_query($conn, $sql);
+confirm_query($result);
+
+
+//$string = str_replace(' ', '', $string);
+
+$subjects = array("offsetedValue","science", "math","socialstudies", "arts", "businessstudies", "language","others");
+
+while($row = mysqli_fetch_assoc($result)) {
+  ?>
+  <div data-ref="mixitup-target" class="col-lg-4 col-sm-6 mb-5 <?php
+
+ 
+  $arrSub=[$row["subject1"],$row["subject2"],$row["subject3"]];
+  
+  //for adding classes of subjects
+  for($i=0;$i<count($arrSub);++$i){
+    $str=$arrSub[$i];
+    $str = str_replace(' ', '', $str);
+    $str=strtolower($str);
+    // if($i==0){
+    //   $x=$str;
+    // }
+    
+   if( array_search($str,$subjects,true) ){
+    echo " ";
+      echo $str;
+   }
+
+  }
+
+  $arrSub=[];
+ 
+  ?> ">
+  
         <div class="card border-0 rounded-0 hover-shadow">
           <img class="card-img-top rounded-0" src="images/teachers/teacher-1.jpg" alt="teacher">
           <div class="card-body">
-            <a href="teacher-single.html">
-              <h4 class="card-title">Jacke Masito</h4>
+            <a href="teacher-single.php?k=<?php echo $row["email"]; ?>" class="<?php
+            //condition for allow people logged in to visit teachers profiles
+              if(!isset($_SESSION["email"])){
+                echo "link-disabled";
+              }
+            ?> ">
+              <h4 class="card-title"><?php echo "Teacher"; ?></h4> 
             </a>
-            <p>Teacher</p>
+            <p><?php echo $row["status"]; ?></p>
             <ul class="list-inline">
-              <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-facebook"></i></a></li>
-              <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-twitter-alt"></i></a></li>
-              <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-google"></i></a></li>
-              <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-linkedin"></i></a></li>
+              <li class="list-inline-item"><?php echo $row["subject1"];   ?></li>
+              <li class="list-inline-item"><?php echo $row["subject2"];   ?></li>
+              <li class="list-inline-item"><?php echo $row["subject3"];   ?></li>
             </ul>
           </div>
         </div>
       </div>
+
+  <?php
+
+
+}
+$_SESSION["rowToStart"]=6;
+
+?>
+
+
       <!-- teacher -->
-      <div data-ref="mixitup-target" class="col-lg-4 col-sm-6 mb-5 businessstudies">
+      <!-- <div data-ref="mixitup-target" class="col-lg-4 col-sm-6 mb-5 businessstudies">
         <div class="card border-0 rounded-0 hover-shadow">
           <img class="card-img-top rounded-0" src="images/teachers/teacher-2.jpg" alt="teacher">
           <div class="card-body">
@@ -140,134 +210,11 @@ require_once("includes/loginSignUP.php");
             </ul>
           </div>
         </div>
-      </div>
-      <!-- teacher -->
-      <div data-ref="mixitup-target" class="col-lg-4 col-sm-6 mb-5 language">
-        <div class="card border-0 rounded-0 hover-shadow">
-          <img class="card-img-top rounded-0" src="images/teachers/teacher-3.jpg" alt="teacher">
-          <div class="card-body">
-            <a href="teacher-single.html">
-              <h4 class="card-title">John Doe</h4>
-            </a>
-            <p>Teacher</p>
-            <ul class="list-inline">
-              <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-facebook"></i></a></li>
-              <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-twitter-alt"></i></a></li>
-              <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-google"></i></a></li>
-              <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-linkedin"></i></a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <!-- teacher -->
-      <div data-ref="mixitup-target" class="col-lg-4 col-sm-6 mb-5 language science arts">
-        <div class="card border-0 rounded-0 hover-shadow">
-          <img class="card-img-top rounded-0" src="images/teachers/teacher-1.jpg" alt="teacher">
-          <div class="card-body">
-            <a href="teacher-single.html">
-              <h4 class="card-title">Alex Rook</h4>
-            </a>
-            <p>Teacher</p>
-            <ul class="list-inline">
-              <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-facebook"></i></a></li>
-              <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-twitter-alt"></i></a></li>
-              <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-google"></i></a></li>
-              <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-linkedin"></i></a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <!-- teacher -->
-      <div data-ref="mixitup-target" class="col-lg-4 col-sm-6 mb-5 socialstudies others">
-        <div class="card border-0 rounded-0 hover-shadow">
-          <img class="card-img-top rounded-0" src="images/teachers/teacher-2.jpg" alt="teacher">
-          <div class="card-body">
-            <a href="teacher-single.html">
-              <h4 class="card-title">Din Martin</h4>
-            </a>
-            <p>Teacher</p>
-            <ul class="list-inline">
-              <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-facebook"></i></a></li>
-              <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-twitter-alt"></i></a></li>
-              <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-google"></i></a></li>
-              <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-linkedin"></i></a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <!-- teacher -->
-      <div data-ref="mixitup-target" class="col-lg-4 col-sm-6 mb-5 science">
-        <div class="card border-0 rounded-0 hover-shadow">
-          <img class="card-img-top rounded-0" src="images/teachers/teacher-3.jpg" alt="teacher">
-          <div class="card-body">
-            <a href="teacher-single.html">
-              <h4 class="card-title">Raka Jim</h4>
-            </a>
-            <p>Teacher</p>
-            <ul class="list-inline">
-              <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-facebook"></i></a></li>
-              <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-twitter-alt"></i></a></li>
-              <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-google"></i></a></li>
-              <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-linkedin"></i></a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <!-- teacher -->
-      <div data-ref="mixitup-target" class="col-lg-4 col-sm-6 mb-5 math science">
-        <div class="card border-0 rounded-0 hover-shadow">
-          <img class="card-img-top rounded-0" src="images/teachers/teacher-1.jpg" alt="teacher">
-          <div class="card-body">
-            <a href="teacher-single.html">
-              <h4 class="card-title">Devid Luis</h4>
-            </a>
-            <p>Teacher</p>
-            <ul class="list-inline">
-              <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-facebook"></i></a></li>
-              <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-twitter-alt"></i></a></li>
-              <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-google"></i></a></li>
-              <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-linkedin"></i></a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <!-- teacher -->
-      <div data-ref="mixitup-target" class="col-lg-4 col-sm-6 mb-5 pharmacy socialstudies arts language">
-        <div class="card border-0 rounded-0 hover-shadow">
-          <img class="card-img-top rounded-0" src="images/teachers/teacher-2.jpg" alt="teacher">
-          <div class="card-body">
-            <a href="teacher-single.html">
-              <h4 class="card-title">Zim Cook</h4>
-            </a>
-            <p>Teacher</p>
-            <ul class="list-inline">
-              <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-facebook"></i></a></li>
-              <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-twitter-alt"></i></a></li>
-              <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-google"></i></a></li>
-              <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-linkedin"></i></a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <!-- teacher -->
-      <div data-ref="mixitup-target" class="col-lg-4 col-sm-6 mb-5 businessstudies others">
-        <div class="card border-0 rounded-0 hover-shadow">
-          <img class="card-img-top rounded-0" src="images/teachers/teacher-3.jpg" alt="teacher">
-          <div class="card-body">
-            <a href="teacher-single.html">
-              <h4 class="card-title">Duis Riu</h4>
-            </a>
-            <p>Teacher</p>
-            <ul class="list-inline">
-              <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-facebook"></i></a></li>
-              <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-twitter-alt"></i></a></li>
-              <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-google"></i></a></li>
-              <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-linkedin"></i></a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      </div> -->
+     
+     
     </div>
+    <button class="btn btn-primary loadMore"> Load More </button>
   </div>
 </section>
 <!-- /teachers -->
@@ -312,6 +259,6 @@ require_once("includes/loginSignUP.php");
 
 <!-- Main Script -->
 <script src="js/script.js"></script>
-
+<script src="js/script2.js"></script>
 </body>
 </html>

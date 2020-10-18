@@ -1,5 +1,7 @@
-<?php
+<?php 
 // session_start();
+
+require_once("includes/functions.php");
 
 ?>
 
@@ -34,7 +36,6 @@
   <!--Favicon-->
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-
 </head>
 
 <body>
@@ -48,29 +49,29 @@
 require_once("includes/topHeader.php");
 ?>
 
-
   <!-- navbar -->
+  
   <div class="navigation w-100">
-      <?php
+    <?php
     require_once("includes/navigation.php");
+    check_login();
+
+    
+    
+$getEmail=$_GET["k"];
+$userEmail=$_SESSION["email"];
+
 
     ?>
   </div>
+
 </header>
-
-
 <!-- /header -->
-
-
-<!-- Modal for login and signup is here -->
+<!-- Modal -->
 <?php
 
 require_once("includes/loginSignUP.php");
 ?>
-
-<!-- Modal -->
-
-
 
 <!-- page title -->
 <section class="page-title-section overlay" data-background="images/backgrounds/page-title.jpg">
@@ -78,8 +79,8 @@ require_once("includes/loginSignUP.php");
     <div class="row">
       <div class="col-md-8">
         <ul class="list-inline custom-breadcrumb">
-          <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="@@page-link">Contact Us</a></li>
-          <li class="list-inline-item text-white h3 font-secondary @@nasted"></li>
+          <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="teacher.html">Tutor</a></li>
+        
         </ul>
        
       </div>
@@ -88,35 +89,59 @@ require_once("includes/loginSignUP.php");
 </section>
 <!-- /page title -->
 
-<!-- contact -->
-<section class="section bg-gray">
+<!-- teacher details -->
+<section class="section">
   <div class="container">
-   
     <div class="row">
-      <div class="col-lg-7 mb-4 mb-lg-0">
-        <form action="#">
-          <input type="text" class="form-control mb-3" id="name" name="name" placeholder="Your Name">
-          <input type="email" class="form-control mb-3" id="mail" name="mail" placeholder="Your Email">
-          <input type="text" class="form-control mb-3" id="subject" name="subject" placeholder="Subject">
-          <textarea name="message" id="message" class="form-control mb-3" placeholder="Your Message"></textarea>
-          <button type="submit" value="send" class="btn btn-primary">SEND MESSAGE</button>
-        </form>
+      <div class="col-md-5 mb-5">
+        <img class="img-fluid w-100" src="images/teachers/teacher-1.jpg" alt="teacher">
       </div>
-      <div class="col-lg-5">
-        <p class="mb-5">Do you have any Questions,problem or suggestions,Please feel free to contact us by filling the contact form</p>
-        <a href="tel:+255657308690" class="text-color h5 d-block">+255 657 308 690</a>
-        <a href="mailto:TuFinder@gmail.com" class="mb-5 text-color h5 d-block">TuFinder@gmail.com</a>
+      <div class="col-md-6 mb-5">
+        <h3>John Doe</h3>
+     
        
+        <div class="row">
+          <div class="col-md-6 mb-5 mb-md-0">
+            <h4 class="mb-4">CONTACT INFO:</h4>
+            <ul class="list-unstyled">
+              <li class="mb-3"><a class="text-color" href="mailto:johndoe@email.com"><i class="ti-email mr-2"></i>johndoe@email.com</a></li>
+              <li class="mb-3"><a class="text-color" href="callto:+120345876"><i class="ti-mobile mr-2"></i>+120 345 876</a></li>
+              <li class="mb-3"><a class="text-color" href="#"><i class="ti-facebook mr-2"></i>john Doe</a></li>
+              <li class="mb-3"><a class="text-color" href="#"><i class="ti-twitter-alt mr-2"></i>john Doe</a></li>
+            
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <h4 class="mb-4">SUMMARY OF SUBJECTS</h4>
+            <ul class="list-unstyled">
+              <li class="mb-3">Arts</li>
+              <li class="mb-3">Science</li>
+              <li class="mb-3">Math</li>
+            </ul>
+          </div>
+          <div class="col-12">
+        <h4 class="mb-4">BIOGRAPHY</h4>
+        <p class="mb-5">I am Teacher at Shalom primary school and can teach Math and Science to Primary Students only of Grade 4 to 7.</p>
       </div>
+      <?php
+        if($_SESSION["email"]==$getEmail){
+          ?>
+           <a class="btn btn-primary" href="#">Edit  Profile</a>
+           <?php
+        }
+      ?>
+ 
+        </div>
+      </div>
+      
     </div>
+   
   </div>
 </section>
-<!-- /contact -->
 
 
-<!-- footer -->
 <footer>
-  
+ 
   <!-- copyright -->
   <div class="copyright py-4 bg-footer">
     <div class="container">
@@ -127,13 +152,14 @@ require_once("includes/loginSignUP.php");
               var CurrentYear = new Date().getFullYear()
               document.write(CurrentYear)
             </script> 
-           <a href="https://TuFinder.com">TuFinder.com</a>.All Rights Reserved.</p>
+            <a href="https://TuFinder.com">TuFinder.com</a> . All Rights Reserved.</p>
         </div>
-       
+      
       </div>
     </div>
   </div>
 </footer>
+
 <!-- /footer -->
 
 <!-- jQuery -->

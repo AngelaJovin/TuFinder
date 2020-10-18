@@ -1,3 +1,10 @@
+<?php 
+session_start();
+if(isset($_SESSION["email"])){
+  $userEmail=$_SESSION["email"];
+}
+
+?>
 
 <div class="top-header py-2 bg-white">
     <div class="container">
