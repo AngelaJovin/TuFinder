@@ -124,23 +124,84 @@ require_once("includes/loginSignUP.php");
 <!-- team -->
 <section class="section">
     <div class="container">
-      <div class="row justify-content-center">
+      <div class="row">
         <div class="col-12">
          <center> <h2 class="section-title">Our Team</h2></center>
         </div>
         <!-- team -->
-        <div class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
+        <div class="col-lg-3 col-md-6 align-items-stretch ">
           <div class="card border-0 rounded-0 hover-shadow">
-            <img class="card-img-top rounded-0" src="images/teachers/teacher-1.jpg" alt="teacher">
+            <img class="card-img-top rounded-2" src="images/team/team-1.jpg" alt="teacher">
             <div class="card-body">
               
                 <h4 class="card-title">Angela Jovin</h4>
-              
+            
               <div class="d-flex justify-content-between">
-                <span>Chief Executive Officer</span>
+                <span>System Designer</span>
                 <ul class="list-inline">
                   <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-facebook"></i></a></li>
-                  <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-twitter-alt"></i></a></li>
+                  <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-google"></i></a></li>
+                  <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-instagram"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+     
+        <!-- team -->
+        <div class="col-lg-3 col-md-6 align-items-stretch ">
+          <div class="card border-0 rounded-0 hover-shadow">
+            <img class="card-img-top rounded-2" src="images/team/team-2.jpg" alt="teacher">
+            <div class="card-body">
+              
+                <h4 class="card-title">Dorice Deodatus</h4>
+            
+              <div class="d-flex justify-content-between">
+                <span>Finance Manager</span>
+                <ul class="list-inline">
+                  <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-facebook"></i></a></li>
+                  <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-google"></i></a></li>
+                  <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-instagram"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+         <!-- team -->
+         <div class="col-lg-3 col-md-6 align-items-stretch ">
+          <div class="card border-0 rounded-0 hover-shadow">
+            <img class="card-img-top rounded-2" src="images/team/team-3.jpg" alt="teacher">
+            <div class="card-body">
+              
+                <h4 class="card-title">James Mushi</h4>
+              
+              <div class="d-flex justify-content-between">
+                <span>Sytem Developer</span>
+                <ul class="list-inline">
+                  <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-facebook"></i></a></li>
+                  <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-google"></i></a></li>
+                 <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-instagram"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+         <!-- team -->
+         <div class="col-lg-3 col-md-6 align-items-stretch ">
+          <div class="card border-0 rounded-0 hover-shadow">
+            <img class="card-img-top rounded-2" src="images/team/team-4.jpg" alt="teacher">
+            <div class="card-body">
+              
+                <h4 class="card-title"> January Paul</h4>
+              
+              <div class="d-flex justify-content-between">
+                <span>System Developer</span>
+                <ul class="list-inline">
+                  <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-facebook"></i></a></li>
                   <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-google"></i></a></li>
                  <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-instagram"></i></a></li>
                 </ul>
@@ -149,30 +210,11 @@ require_once("includes/loginSignUP.php");
           </div>
         </div>
         
-        <!-- team -->
-        <div class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
-          <div class="card border-0 rounded-0 hover-shadow">
-            <img class="card-img-top rounded-0" src="images/teachers/teacher-3.jpg" alt="teacher">
-            <div class="card-body">
-              
-                <h4 class="card-title">Dorice Deodatus</h4>
-            
-              <div class="d-flex justify-content-between">
-                <span>Managing Director.</span>
-                <ul class="list-inline">
-                  <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-facebook"></i></a></li>
-                  <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-twitter-alt"></i></a></li>
-                  <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-google"></i></a></li>
-                  <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-instagram"></i></a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
-  <!-- /teachers -->
+  <!-- /team -->
+
 
 <!-- footer -->
 <footer>
