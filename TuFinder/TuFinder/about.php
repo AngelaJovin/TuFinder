@@ -178,7 +178,7 @@ require_once("includes/loginSignUP.php");
                 <h4 class="card-title">James Mushi</h4>
               
               <div class="d-flex justify-content-between">
-                <span>Sytem Developer</span>
+                <span>System Developer</span>
                 <ul class="list-inline">
                   <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-facebook"></i></a></li>
                   <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-google"></i></a></li>
