@@ -187,54 +187,6 @@ require_once("includes/loginSignUP.php");
 </section>
 
 
-<section class="section">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-12">
-        <center><h2 class="section-title">Our Team</h2></center>
-      </div>
-      <!-- team -->
-      <div class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
-        <div class="card border-0 rounded-0 hover-shadow">
-          <img class="card-img-top rounded-0" src="images/teachers/teacher-1.jpg" alt="teacher">
-          <div class="card-body">
-           
-              <h4 class="card-title">Angela Jovin</h4>
-          
-            <p>Chief Executive Officer</p>
-            <ul class="list-inline">
-              <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-facebook"></i></a></li>
-              <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-twitter-alt"></i></a></li>
-              <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-google"></i></a></li>
-              <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-instagram"></i></a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <!-- team -->
-     
-      <!-- team -->
-      <div class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
-        <div class="card border-0 rounded-0 hover-shadow">
-          <img class="card-img-top rounded-0" src="images/teachers/teacher-3.jpg" alt="teacher">
-          <div class="card-body">
-           
-              <h4 class="card-title">Dorice Deodatus</h4>
-          
-            <p> Managing Director</p>
-            <ul class="list-inline">
-              <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-facebook"></i></a></li>
-              <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-twitter-alt"></i></a></li>
-              <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-google"></i></a></li>
-              <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-instagram"></i></a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- /team -->
 
 <!-- news -->
 <section class="section pt-0">
