@@ -41,6 +41,10 @@ function check_login(){
       redirect("index.php");
     }
   }
-       
+  function redirect($location){
+    header("Location: $location");
+    exit;
+  }
+    
 
 ?>

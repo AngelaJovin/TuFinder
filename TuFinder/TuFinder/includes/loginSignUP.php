@@ -75,7 +75,7 @@
                             <input type="email" class="form-control mb-3" id="loginEmail" name="loginEmail" placeholder="Email">
                         </div>
                     <div class="col-12">
-                        <input type="password" class="form-control mb-3" id="loginPassword" name="loginPassword" placeholder="Password">
+                        <input type="password" class="form-control mb-3" id="loginPassword" name="loginPassword" placeholder="Password" value="323">
                     </div>
                     <div class="col-12">
                         <input type="submit" class="btn btn-primary" name="login" value="SIGN IN" >
@@ -85,3 +85,7 @@
         </div>
     </div>
 </div>
+
+
+
+<!-- edit profile -->

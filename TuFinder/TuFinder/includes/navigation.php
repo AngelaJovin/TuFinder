@@ -17,8 +17,35 @@
               <a class="nav-link" href="about.php">About</a>
             </li>
            
-            <li class="nav-item @@blog">
-              <a class="nav-link" href="teacher.php">Tutors</a>
+            <li class="nav-item @@blog dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Tutors
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="teacher.php">Tutors</a>
+              <?php if(isset($_SESSION["email"])){
+                    $userEmail=$_SESSION["email"];
+                    require_once("includes/db.php");
+                    require_once("includes/functions.php");
+                    $sql = "SELECT * FROM registration WHERE email='$userEmail' LIMIT 1";
+
+                    $result = mysqli_query($conn, $sql);
+                    confirm_query($result);
+                    
+                    while($row = mysqli_fetch_assoc($result)) {
+                        if($row["status"]=="Tutor"){
+                          $_SESSION["sts"]="Tutor"; //one will get this session only when he/she is tutor and has clicked the buttons so we will check this before showing students or parents
+                                                    //also to prevent one who could just enter url and put the get parameter manually
+                          ?>
+                            <a class="dropdown-item" href="teacher.php?st=Student">Students</a>
+                            <a class="dropdown-item" href="teacher.php?st=Parent">Parents</a>
+                            <div class="dropdown-divider"></div>
+                          <?php
+                        }
+                  } } ?>
+             
+            </div>
+                
             </li>
             
             <li class="nav-item @@contact">

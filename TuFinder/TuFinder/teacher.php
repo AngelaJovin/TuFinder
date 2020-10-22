@@ -123,9 +123,19 @@ $_SESSION["rowToStart"]=0;
 
 if(!isset($_SESSION["email"])){
   $sql = "SELECT * FROM registration WHERE status='Tutor' LIMIT 6 OFFSET 0";
-}else{
+}else{//if user is logged in and is a teacher then dont display him in the list
+  
   $userEmail=$_SESSION["email"];
-  $sql = "SELECT * FROM registration WHERE status='Tutor' AND email !='$userEmail' LIMIT 6 OFFSET 0";
+  if(isset($_GET["st"]) && isset($_SESSION["sts"])){//user now has selected to just filter whether parents or students only and he/she is a teacher  coz otherwise would not get that session[sts] 
+                                                //also to prevent one who could just enter url and put the get parameter manually
+    $st=$_GET["st"];
+    $_SESSION["sts"]=$st;
+    $sql = "SELECT * FROM registration WHERE status='$st' AND email !='$userEmail' LIMIT 6 OFFSET 0";
+  }else{
+    unset($_SESSION["sts"]);//so that when  going to load more it doesnt consider session sts
+    $sql = "SELECT * FROM registration WHERE status='Tutor' AND email !='$userEmail' LIMIT 6 OFFSET 0";
+  }
+  
 }
 
 $result = mysqli_query($conn, $sql);
@@ -164,7 +174,7 @@ while($row = mysqli_fetch_assoc($result)) {
   ?> ">
   
         <div class="card border-0 rounded-0 hover-shadow">
-          <img class="card-img-top rounded-0" src="images/teachers/teacher-1.jpg" alt="teacher">
+          <img class="card-img-top rounded-0" src="images/teachers/profileDefault.png" alt="teacher">
           <div class="card-body">
             <a href="teacher-single.php?k=<?php echo $row["email"]; ?>" class="<?php
             //condition for allow people logged in to visit teachers profiles
@@ -172,9 +182,9 @@ while($row = mysqli_fetch_assoc($result)) {
                 echo "link-disabled";
               }
             ?> ">
-              <h4 class="card-title"><?php echo "Teacher"; ?></h4> 
+              <h4 class="card-title"><?php echo $row["status"]; ?></h4> 
             </a>
-            <p><?php echo $row["status"]; ?></p>
+            <p><?php echo $row["name"]; ?></p>
             <ul class="list-inline">
               <li class="list-inline-item"><?php echo $row["subject1"];   ?></li>
               <li class="list-inline-item"><?php echo $row["subject2"];   ?></li>
@@ -214,7 +224,7 @@ $_SESSION["rowToStart"]=6;
      
      
     </div>
-    <button class="btn btn-primary loadMore"> Load More </button>
+    <button class="btn btn-primary loadMore">Load More </button>
   </div>
 </section>
 <!-- /teachers -->

@@ -13,8 +13,37 @@ if(!isset($_SESSION["email"])){
     $sql = "SELECT * FROM registration WHERE status='Tutor' LIMIT 6 OFFSET $rowToStart";
 }else{
     $userEmail=$_SESSION["email"];
+    if(isset($_SESSION["sts"])){//user now has selected to just filter whether parents or students only and he/she is a teacher  coz otherwise would not get that session[sts] 
+      //also to prevent one who could just enter url and put the get parameter manually
+    $st=$_SESSION["sts"];
+$sql = "SELECT * FROM registration WHERE status='$st' AND email !='$userEmail' LIMIT 6 OFFSET $rowToStart";
+}else{
     $sql = "SELECT * FROM registration WHERE status='Tutor' AND email !='$userEmail' LIMIT 6 OFFSET $rowToStart";
 }
+}
+
+
+
+
+
+// if(!isset($_SESSION["email"])){
+//   $sql = "SELECT * FROM registration WHERE status='Tutor' LIMIT 6 OFFSET 0";
+// }else{//if user is logged in and is a teacher then dont display him in the list
+  
+//   $userEmail=$_SESSION["email"];
+//   if(isset($_GET["st"]) && isset($_SESSION["sts"])){//user now has selected to just filter whether parents or students only and he/she is a teacher  coz otherwise would not get that session[sts] 
+//                                                 //also to prevent one who could just enter url and put the get parameter manually
+//     $st=$_GET["st"];
+//     $sql = "SELECT * FROM registration WHERE status='$st' AND email !='$userEmail' LIMIT 6 OFFSET 0";
+//   }else{
+//     $sql = "SELECT * FROM registration WHERE status='Tutor' AND email !='$userEmail' LIMIT 6 OFFSET 0";
+//   }
+  
+// }
+
+
+
+
 //$sql = "SELECT * FROM registration WHERE status='Tutor' LIMIT 6 OFFSET $rowToStart";
 
 $result = mysqli_query($conn, $sql);
@@ -49,7 +78,7 @@ while($row = mysqli_fetch_assoc($result)) {
   $html.='
   <div class="card border-0 rounded-0 hover-shadow">
   
-  <img class="card-img-top rounded-0" src="images/teachers/teacher-1.jpg" alt="teacher">
+  <img class="card-img-top rounded-0" src="images/teachers/profileDefault.png" alt="teacher">
   <div class="card-body">
 
     <a href="teacher-single.php?k=';
@@ -64,11 +93,13 @@ while($row = mysqli_fetch_assoc($result)) {
    
 
       $html.='  ">
-      <h4 class="card-title"> Teacher </h4> 
+      <h4 class="card-title">';
+      $html.= $row["status"];
+      $html.='</h4> 
     </a>
     <p>';
 
-    $html.= $row["status"];
+    $html.= $row["name"];
 
     $html.='</p>
     
