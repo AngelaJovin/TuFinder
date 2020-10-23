@@ -78,7 +78,18 @@ while($row = mysqli_fetch_assoc($result)) {
   $html.='
   <div class="card border-0 rounded-0 hover-shadow">
   
-  <img class="card-img-top rounded-0" src="images/teachers/profileDefault.png" alt="teacher">
+  <img class="card-img-top rounded-0" src="';
+ 
+  //profile picture issues 
+  if($row["profilePicture"]==null){//profile picture  is not set display default picture
+    $html.='images/teachers/profileDefault.png';
+  }else{
+        $html.=$row["profilePicture"];
+      } 
+                    
+      
+
+  $html.='" alt="teacher">
   <div class="card-body">
 
     <a href="teacher-single.php?k=';

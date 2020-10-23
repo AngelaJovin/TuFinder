@@ -57,8 +57,9 @@ require_once("includes/topHeader.php");
     check_login();
 
     
-    
-$getEmail=$_GET["k"];
+
+  $getEmail=$_GET["k"];   //the link that redirect to this page should incude get request with k=signupemail
+
 $userEmail=$_SESSION["email"];
 
 
@@ -104,8 +105,16 @@ while($row = mysqli_fetch_assoc($result)) {
   <div class="container">
     <div class="row">
       <div class="col-md-5 mb-5">
-        <img class="img-fluid w-100" src="images/teachers/profileDefault.png" alt="teacher">
-        <a class="btn btn-primary" href="#">Change Picture</a>
+        <img class="img-fluid w-100" src="<?php
+          
+          if($row["profilePicture"]==null){//profile picture  is not set display default picture
+            echo "images/teachers/profileDefault.png";
+          }else{
+                echo $row["profilePicture"];
+              } 
+                            
+              ?>" alt="teacher">
+        <a class=" btn btn-primary " href="#" data-toggle="modal" data-target="#changePicture">Change Picture</a>
       </div>
       <div class="col-md-6 mb-5">
         <h3><?php echo $row["name"];  ?></h3>
@@ -222,6 +231,31 @@ while($row = mysqli_fetch_assoc($result)) {
     
 </div>
 
+<div class="modal fade" id="changePicture" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content rounded-1 border-0 p-4">
+            <div class="modal-header border-0">
+                <h3>Change Picture</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="loginAndSignup.php" id="thiss" method="post" enctype="multipart/form-data" class="row">
+                    <div class="col-12">
+                           <input type="file" name="file">
+                        </div>
+                    <div class="col-12">
+                        <input type="submit" class="btn btn-primary" name="changePicture" value="Change Picture" >
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 <footer>
  
   <!-- copyright -->
@@ -265,6 +299,23 @@ while($row = mysqli_fetch_assoc($result)) {
 
 <!-- Main Script -->
 <script src="js/script.js"></script>
+
+
+<!-- when incorrect image uploaded -->
+<?php
+
+if(isset($_SESSION["error"])){
+  // echo $_SESSION["error"];
+  ?>
+<script>
+alert("Not updated, please choose another picture");
+</script>
+
+  <?php
+  unset($_SESSION['error']);   //to avoid unnecessary incorrect password alerts when one gaveup login in
+}
+?>
+
 
 </body>
 </html>

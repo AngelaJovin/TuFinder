@@ -174,7 +174,15 @@ while($row = mysqli_fetch_assoc($result)) {
   ?> ">
   
         <div class="card border-0 rounded-0 hover-shadow">
-          <img class="card-img-top rounded-0" src="images/teachers/profileDefault.png" alt="teacher">
+          <img class="card-img-top rounded-0" src="<?php
+          
+          if($row["profilePicture"]==null){//profile picture  is not set display default picture
+            echo "images/teachers/profileDefault.png";
+          }else{
+                echo $row["profilePicture"];
+              } 
+                            
+              ?>" alt="teacher">
           <div class="card-body">
             <a href="teacher-single.php?k=<?php echo $row["email"]; ?>" class="<?php
             //condition for allow people logged in to visit teachers profiles
