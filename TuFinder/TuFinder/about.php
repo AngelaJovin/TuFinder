@@ -139,7 +139,7 @@ require_once("includes/loginSignUP.php");
               <div class="d-flex justify-content-between">
                 <span>System Designer</span>
                 <ul class="list-inline">
-                  <li class="list-inline-item"><a class="text-color" href="https://www.facebook.com/angela.epic.9"><i class="ti-facebook"></i></a></li>
+                 
                   <li class="list-inline-item"><a class="text-color" href="https://github.com/AngelaJovin"><i class="ti-github"></i></a></li>
                   <li class="list-inline-item"><a class="text-color" href="https://www.instagram.com/_being_angie_/"><i class="ti-instagram"></i></a></li>
                 </ul>
@@ -160,8 +160,8 @@ require_once("includes/loginSignUP.php");
               <div class="d-flex justify-content-between">
                 <span>Finance Manager</span>
                 <ul class="list-inline">
-                  <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-facebook"></i></a></li>
-                  <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-twitter"></i></a></li>
+                  <li class="list-inline-item"><a class="text-color" href="https://web.facebook.com/dorice.kakwaya"><i class="ti-facebook"></i></a></li>
+              
                   <li class="list-inline-item"><a class="text-color" href="https://www.instagram.com/n.i.v.e.r.a/"><i class="ti-instagram"></i></a></li>
                 </ul>
               </div>
@@ -180,7 +180,7 @@ require_once("includes/loginSignUP.php");
               <div class="d-flex justify-content-between">
                 <span>System Developer</span>
                 <ul class="list-inline">
-                  <li class="list-inline-item"><a class="text-color" href="https://www.facebook.com/james.mushi.313/"><i class="ti-facebook"></i></a></li>
+                 
                   <li class="list-inline-item"><a class="text-color" href="https://github.com/itsmushi"><i class="ti-github"></i></a></li>
                  <li class="list-inline-item"><a class="text-color" href="https://www.instagram.com/itsmushijames/"><i class="ti-instagram"></i></a></li>
                 </ul>
@@ -201,7 +201,7 @@ require_once("includes/loginSignUP.php");
               <div class="d-flex justify-content-between">
                 <span>System Developer</span>
                 <ul class="list-inline">
-                  <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-facebook"></i></a></li>
+                  
                   <li class="list-inline-item"><a class="text-color" href="https://github.com/domel06"><i class="ti-github"></i></a></li>
                  <li class="list-inline-item"><a class="text-color" href="https://www.instagram.com/domel_bura/"><i class="ti-instagram"></i></a></li>
                 </ul>
@@ -230,7 +230,7 @@ require_once("includes/loginSignUP.php");
               var CurrentYear = new Date().getFullYear()
               document.write(CurrentYear)
             </script> 
-             <a href="https://TuFinder.com">TuFinder.com</a>.All Rights Reserved.</p>
+             <a href="https://Tu-finder.com">TuFinder.com</a>.All Rights Reserved.</p>
         </div>
         
       </div>
