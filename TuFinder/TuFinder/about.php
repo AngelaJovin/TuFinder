@@ -68,22 +68,44 @@ require_once("includes/topHeader.php");
 
 require_once("includes/loginSignUP.php");
 ?>
-
-<!-- Modal -->
-
-<!-- page title -->
+<!--page title-->
 <section class="page-title-section overlay" data-background="images/backgrounds/page-title.jpg">
   <div class="container">
     <div class="row">
       <div class="col-md-8">
         <ul class="list-inline custom-breadcrumb">
-          <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="@@page-link">About Us</a></li>
+          <li class="list-inline-item"><a class="h2 text-primary font-secondary">About Us</a></li>
           <li class="list-inline-item text-white h3 font-secondary @@nasted"></li>
         </ul>
-       <p class="text-lighten">TuFinder helps you find the best private tutors near you in any subject.Contact a professional tutor to start in person
-            or online tutoring.Sign up  as a parent/tutor/student.Create your Account and edit your profile by providing more
-             description about yourself.Connect with professional and peer tutors online and take your basic skills to a whole new level.</p>
-             <p class="text-lighten">Parents and Students will be able to contact the Tutors only after they sign up and Create accounts and Only Tutors with Accounts will be able to see the students and parents that need the Tutoring services.</p>
+         <p class="text-lighten">TuFinder helps you connect with the best private tutors  </br>near you in any subject.Contact a professional/Peer tutor to </br>schedule your lessons start in person or online tutoring.</p>
+         <div class="row">
+          <div class="col-lg-6">
+          
+ <ul class="list-inline custom-breadcrumb">
+          <li class="h2 text-primary font-secondary" >Our Services</li>
+          <li class="list-inline-item text-white h3 font-secondary @@nasted"></li>
+        </ul>
+           
+            <div >
+              <h4 class="text-lighten">PARENTS</h4>
+            <p class="text-white"><em>Sign up and create account where you will be able to edit your profile,provide much information as possible to help you access the right tutors for your child </em></p>
+              
+            </div>
+             <div >
+              <h4  class="text-lighten">STUDENTS</h4>
+              <p class="text-white"><em>Sign up and create account where you will be able to edit your profile,provide much information as possible to help you access the right tutors for yourself</em></p>
+              
+            </div>
+             <div >
+              <h4  class="text-lighten">TUTORS</h4>
+              <p class="text-white"><em>Sign up and create account where you will be able to edit your profile,provide much information as possible to help parents and students access you easily</em></p>
+             
+            </div>
+          </div>
+         
+            </div>
+            <h5>NOTE</h5>
+             <p class="text-lighten">Parents and Students will be able to contact the </br>Tutors only after they sign up and Create accounts</br> and Only Tutors with Accounts will be able to see the </br>students and parents that need the Tutoring services.</p>
       </div>
     </div>
   </div>
@@ -103,7 +125,7 @@ require_once("includes/loginSignUP.php");
 <!-- /about -->
 
 
-<!-- success story -->
+<!-- why Us -->
 <section class="section bg-cover" data-background="images/backgrounds/success-story.jpg">
   <div class="container">
     <div class="row">
@@ -119,7 +141,7 @@ require_once("includes/loginSignUP.php");
     </div>
   </div>.
 </section>
-<!-- /success story -->
+<!-- /why Us -->
 
 <!-- team -->
 <section class="section">
@@ -139,9 +161,9 @@ require_once("includes/loginSignUP.php");
               <div class="d-flex justify-content-between">
                 <span>System Designer</span>
                 <ul class="list-inline">
-                  <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-facebook"></i></a></li>
-                  <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-google"></i></a></li>
-                  <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-instagram"></i></a></li>
+                 
+                  <li class="list-inline-item"><a class="text-color" href="https://github.com/AngelaJovin"><i class="ti-github"></i></a></li>
+                  <li class="list-inline-item"><a class="text-color" href="https://www.instagram.com/_being_angie_/"><i class="ti-instagram"></i></a></li>
                 </ul>
               </div>
             </div>
@@ -160,9 +182,9 @@ require_once("includes/loginSignUP.php");
               <div class="d-flex justify-content-between">
                 <span>Finance Manager</span>
                 <ul class="list-inline">
-                  <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-facebook"></i></a></li>
-                  <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-google"></i></a></li>
-                  <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-instagram"></i></a></li>
+                  <li class="list-inline-item"><a class="text-color" href="https://web.facebook.com/dorice.kakwaya"><i class="ti-facebook"></i></a></li>
+              
+                  <li class="list-inline-item"><a class="text-color" href="https://www.instagram.com/n.i.v.e.r.a/"><i class="ti-instagram"></i></a></li>
                 </ul>
               </div>
             </div>
@@ -180,9 +202,9 @@ require_once("includes/loginSignUP.php");
               <div class="d-flex justify-content-between">
                 <span>System Developer</span>
                 <ul class="list-inline">
-                  <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-facebook"></i></a></li>
-                  <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-google"></i></a></li>
-                 <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-instagram"></i></a></li>
+                 
+                  <li class="list-inline-item"><a class="text-color" href="https://github.com/itsmushi"><i class="ti-github"></i></a></li>
+                 <li class="list-inline-item"><a class="text-color" href="https://www.instagram.com/itsmushijames/"><i class="ti-instagram"></i></a></li>
                 </ul>
               </div>
             </div>
@@ -201,9 +223,9 @@ require_once("includes/loginSignUP.php");
               <div class="d-flex justify-content-between">
                 <span>System Developer</span>
                 <ul class="list-inline">
-                  <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-facebook"></i></a></li>
-                  <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-google"></i></a></li>
-                 <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-instagram"></i></a></li>
+                  
+                  <li class="list-inline-item"><a class="text-color" href="https://github.com/domel06"><i class="ti-github"></i></a></li>
+                 <li class="list-inline-item"><a class="text-color" href="https://www.instagram.com/domel_bura/"><i class="ti-instagram"></i></a></li>
                 </ul>
               </div>
             </div>
@@ -230,7 +252,7 @@ require_once("includes/loginSignUP.php");
               var CurrentYear = new Date().getFullYear()
               document.write(CurrentYear)
             </script> 
-             <a href="https://TuFinder.com">TuFinder.com</a>.All Rights Reserved.</p>
+             <a href="https://Tu-finder.com">TuFinder.com</a>.All Rights Reserved.</p>
         </div>
         
       </div>
