@@ -1,12 +1,4 @@
-/*!------------------------------------------------------------------
-[MAIN STYLESHEET]
-
-PROJECT:	Tufinder
-VERSION:	2
--------------------------------------------------------------------*/
-/*------------------------------------------------------------------
-[TABLE OF CONTENTS]
--------------------------------------------------------------------*/
+/*maain css*/
 /*  typography */
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
 @font-face {
@@ -51,6 +43,7 @@ h1, .h1 {
 
 h2, .h2 {
   font-size: 40px;
+
 }
 
 @media (max-width: 575px) {
@@ -190,7 +183,7 @@ h6, .h6 {
 
 .btn-secondary {
   background: #fff;
-  color: maroon;
+  color: #09cc7f;
   border: 1px solid #fff;
 }
 
@@ -379,6 +372,10 @@ a h4:hover {
   background: #f4f4f4;
 }
 
+.bg-green{
+  background: #09cc7f;
+}
+
 .text-primary {
   color: #f4f4f4 !important;
 }
@@ -469,7 +466,8 @@ a h4:hover {
 
 /* page title */
 .page-title-section {
-  padding: 200px 0 80px;
+  padding: 150px 0 1px;
+
 }
 
 .custom-breadcrumb li.nasted {
@@ -942,13 +940,7 @@ link:focus,
   right: 0;
 }
 
-.col-md-4{
 
-
-}
- 
- .
-/* /team */
 /* footer */
 .newsletter {
   background-image: linear-gradient(to right, transparent 50%, #09cc7f 50%);
@@ -1028,6 +1020,9 @@ link:focus,
 }
  .mb-0  a{
 	color: #f4f4f4;  
+}
+#tutoring{
+  background-color: dimgray;
 }
 
 
